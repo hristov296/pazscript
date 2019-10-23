@@ -13,11 +13,15 @@ a {
 ul.main-list {
   display: grid;
   grid-template-columns: max-content 120px 150px;
-  grid-gap: 10px 30px;
+  grid-gap: 0px 30px;
   position: relative;
+  align-items: center;
 }
 ul.main-list > li {
   display: contents;
+}
+ul.main-list > li a {
+  padding: 10px 0;
 }
 ul.main-list > li a:before {
   background: #c34b053d;
