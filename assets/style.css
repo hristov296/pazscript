@@ -1,0 +1,42 @@
+body {
+  font-family: "Jura", sans-serif;
+  margin: 0;
+  padding: 15px 0;
+  background: linear-gradient(-180deg, #0000005e, #000000), url("/assets/background.png");
+  color: #fff;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+ul.main-list {
+  display: grid;
+  grid-template-columns: max-content 120px 150px;
+  grid-gap: 10px 30px;
+  position: relative;
+}
+ul.main-list > li {
+  display: contents;
+}
+ul.main-list > li a:before {
+  background: #c34b053d;
+  content: "";
+  position: absolute;
+  left: 35px;
+  width: calc(100% - 25px);
+  height: 21px;
+  z-index: -1;
+}
+ul.main-list > li a.active:before {
+  background: #c34b058a;
+}
+#canvas {
+  flex: 1;
+  margin: 0 30px;
+  height: 600px;
+}
+
+#main {
+  display: flex;
+}

@@ -1,0 +1,19 @@
+html
+  head
+    title= title
+    link(href="https://fonts.googleapis.com/css?family=Jura:400,500,600,700&display=swap&subset=cyrillic",rel="stylesheet")
+    link(href="/assets/style.css",rel="stylesheet")
+  body
+    div(id="main")
+      ul(class="main-list")
+        each val in list          
+          li
+            a(href=val.link, target="_blank")= val.title
+            span=val.price
+            button(class="show-chart")= "show chart"
+      div(id="canvas")
+      script.
+        var plots = !{JSON.stringify(list.map(el => ({name: el.id, ploty1: el.ploty1, ploty2: el.ploty2, plotx: el.plotx })))}
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js", integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=", crossorigin="anonymous")
+    script(src="/assets/jquery.flot.js")
+    script(src="/assets/scripts.js")
