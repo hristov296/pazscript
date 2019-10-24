@@ -13,9 +13,8 @@ cache:
     - node_modules
 node_js:
   - "12"
-addons:
-  ssh_known_hosts:
-    - irithyll.com
+install:
+  - echo |1|H54y3NglGpgkom7iwH7lAZreMG0=|TZbcImm5Ic/lCXR8s1/Vl2UKHmA= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFStD6RV+XwlRYqhmjnZU0Z8gzfWWnxB4clc5KcoSLX9Xgovt/ScyQEAdxaKz3CGu15vE1SXNaksWrIKDfpzjGU= >> $HOME/.ssh/known_hosts
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_3db8244cf380_key -iv $encrypted_3db8244cf380_iv
     -in apps-key.enc -out id_rsa -d
