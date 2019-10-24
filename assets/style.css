@@ -39,6 +39,8 @@ ul.main-list > li a.active:before {
   flex: 1;
   margin: 0 30px;
   height: 600px;
+  position: sticky;
+  top: 36px;
 }
 
 #main {
