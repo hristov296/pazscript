@@ -13,6 +13,9 @@ cache:
     - node_modules
 node_js:
   - "12"
+addons:
+  ssh_known_hosts:
+    - irithyll.com
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_3db8244cf380_key -iv $encrypted_3db8244cf380_iv
     -in apps-key.enc -out id_rsa -d
