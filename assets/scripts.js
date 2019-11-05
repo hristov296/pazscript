@@ -14,9 +14,9 @@
         return;
       }
       $(".main-list li a").removeClass("active");
-      $($items[i]).addClass("active");
       $($items[i])
         .siblings("a")
+        .focus()
         .addClass("active");
 
       b = [plots[i].ploty1, plots[i].ploty2];
@@ -45,7 +45,6 @@
         },
       });
 
-      $($items[i]).focus();
       active = i;
     }
 
