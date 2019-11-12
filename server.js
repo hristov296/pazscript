@@ -9,19 +9,11 @@ app.set("view engine", "pug");
 app.set("views", "./views");
 app.use("/assets", express.static(path.join(__dirname, "assets")));
 
-const minute = 1000 * 60;
-const hour = minute * 60;
-let timer = false;
-
 app.get("/", (req, res) => {
-  console.log(timer);
-  if (!timer) {
-    timer = true;
-    setTimeout(() => {
-      timer = false;
-    }, hour);
+  if (main.getLastUpdate()) {
     main.updatePrices();
   }
+
   fs.readFile("./db.json", "utf8", (err, data) => {
     if (err) throw err;
     // console.log(JSON.parse(data).items);

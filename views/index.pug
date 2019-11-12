@@ -10,7 +10,7 @@ html
           li
             a(href=val.link, target="_blank")= val.title
             span=val.price
-            button(class="show-chart")= "show chart"
+            button(class="show-chart")= "show"
       div(id="canvas")
       script.
         var plots = !{JSON.stringify(list.map(el => ({name: el.id, ploty1: el.ploty1, ploty2: el.ploty2, plotx: el.plotx })))}
